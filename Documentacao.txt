@@ -1,0 +1,36 @@
+Tecnologias Usadas:
+	Front End - ReactJS
+	Back End - NodeJS
+	Firebase - Banco de Dados
+	CSS + SCSS Bootrap - Estilização / Responsivdade
+
+Proposta:
+
+Engenharia de Requisitos:
+	Não funcionais:
+		O sistema deve ter Desempenho em seu carregamento e processamento.
+		O sistema deve ter Escalabilidade para poder suportar seus usuários.
+		O sistema deve ter Segurança em salvar os dados.
+		O sistema deve ter Usabilidade para poder ser responsivo para os demais usuários.
+		O sistema deve ter Compatibilidade para rodar nas maiorias dos navegadores.
+		
+
+	Funcionais:
+		O site deve carregar em menos de 3 segundos em conexões padrão de internet (banda larga).
+		O sistema deve suportar até 100 usuários simultâneos sem degradação significativa de desempenho.
+		A arquitetura deve permitir fácil adição de novos módulos ou funcionalidades sem necessidade	 de grandes reescritas.
+		Todos os dados do usuário devem ser guardados de forma segura no banco de dados do firebase, com permissão apenas para leitura, feita pelo responsável dos dados.
+		Autenticação de dois fatores (2FA) deve ser oferecida para acesso à conta do usuário.
+		A interface deve ser intuitiva e fácil de navegar.
+		O site deve ser acessível para pessoas com deficiência, seguindo as diretrizes de acessibilidade.
+		O site deve ser compatível com os navegadores mais utilizados (Chrome, Firefox, Safari, Edge).
+		O site deve ser responsivo, adaptando-se a diferentes tamanhos de tela e dispositivos (desktop, tablet, smartphone).
+		O código deve ser documentado.
+		Os usuários devem poder agendar consertos de dispositivos móveis, como troca de tela, atualização de sistema operacional (Windows, Android, iOS), etc.
+		Deve haver uma seção de e-commerce onde os usuários podem comprar peças de reposição, como telas, baterias, carregadores, etc.
+		Permitir que os usuários visualizem o histórico de consertos e serviços realizados em seus dispositivos.
+		Após a conclusão do serviço, permitir que os usuários avaliem e comentem sobre a qualidade do serviço prestado.
+
+Dowloads do Projeto:
+	npm i sass
+	npm install react-icons
