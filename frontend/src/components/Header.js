@@ -19,7 +19,7 @@ const Header = () => {
         <nav className={`navbar ${isOpen ? 'open' : ''}`}>
           <ul className="nav-links">
             <li><a href="#home">Home</a></li>
-            <li><a href="/services">Serviços</a></li>
+            <li><a href="/Servico">Serviços</a></li>
             <li><a href="#about">Sobre</a></li>
             <li><a href="#contact">Contato</a></li>
           </ul>
