@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Home from './screens/Home';
 import Painel from './screens/Painel';
 import Header from './components/Header';
-import Servico from './components/Servico';
+import Servico from './screens/Servico';
 
 function App() {
   return (
@@ -21,3 +21,6 @@ function App() {
 }
 
 export default App;
+
+
+// site de referencia: https://novosmart.com.br/
