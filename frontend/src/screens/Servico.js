@@ -1,7 +1,34 @@
-import React from "react";
+import React, {useState} from "react";
 import '../styles/Servico.scss';
 
 function Servico() {
+    const [selected, setSelected] = useState(null);
+
+    const toggle = (i) => {
+        if (selected === i) {
+            return setSelected(null);
+        }
+        setSelected(i);
+    };
+
+    const data = [
+        {
+            question: "Porque escolha nossa loja?",
+            answer: "Todo aparelho eletrônico tem um tempo de vida especificado. Baterias, placas, telas, touch, tudo tem um tempo de validade pré-determinado. Além disso, todos os tipos de equipamentos usados para os consertos de determinados celulares precisam de manutenção também. E é por isso que a Novo Smart é referência nos serviços de assistência de celular. Ela promove todos os cuidados com os próprios recursos disponíveis, garantindo o sucesso de manutenções. Para tanto, é importante buscar observar a qualidade de tudo o que uma assistência oferece, para que os resultados sejam sempre efetivos e positivos. Qualidade é o principal valor da Novo Smart!"
+        },
+        {
+            question: "Qual é a especialização da Assistência especializada em Celular?",
+            answer: "Texto explicando a especialização da assistência especializada em celular."
+        },
+        {
+            question: "Habilidades para consertos de celular",
+            answer: "Texto explicando as habilidades necessárias para consertos de celular."
+        },
+        {
+            question: "Quando procurar uma assistência especializada?",
+            answer: "Texto explicando quando é necessário procurar uma assistência especializada."
+        }
+    ];
     return (
         <div className="servico-container">
             <h1 className="servico-title">Nossos Serviços</h1>
@@ -56,6 +83,25 @@ function Servico() {
                     <button className="contact-btn">Fale Conosco agora!</button>
                 </div>
             </div>
+
+
+
+            <div className="faq-section">
+            <h1 className="faq-title">Perguntas Frequentes</h1>
+            <div className="accordion">
+                {data.map((item, i) => (
+                    <div className="item" key={i}>
+                        <div className="title" onClick={() => toggle(i)}>
+                            <h2>{item.question}</h2>
+                            <span className="icon">{selected === i ? '-' : '+'}</span>
+                        </div>
+                        <div className={`content ${selected === i ? 'show' : ''}`}>
+                            <p>{item.answer}</p>
+                        </div>
+                    </div>
+                ))}
+            </div>
+        </div>
         </div>
 
         
