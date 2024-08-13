@@ -92,7 +92,7 @@ function Servico() {
                 {data.map((item, i) => (
                     <div className="item" key={i}>
                         <div className="title" onClick={() => toggle(i)}>
-                            <h2>{item.question}</h2>
+                            <h2 style={{color: 'black'}}>{item.question}</h2>
                             <span className="icon">{selected === i ? '-' : '+'}</span>
                         </div>
                         <div className={`content ${selected === i ? 'show' : ''}`}>
