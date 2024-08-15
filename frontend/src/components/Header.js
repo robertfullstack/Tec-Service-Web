@@ -14,7 +14,9 @@ const Header = () => {
     <header className="header">
       <div className="container">
         <div className="logo">
+          <a href='/' style={{textDecoration: 'none'}}>
           <h1>TecService</h1>
+          </a>
         </div>
         <nav className={`navbar ${isOpen ? 'open' : ''}`}>
           <ul className="nav-links">
@@ -23,7 +25,9 @@ const Header = () => {
             <li><a href="#about">Sobre</a></li>
             <li><a href="#contact">Contato</a></li>
           </ul>
-          <button className="contact-button">Fale Conosco</button>
+<a href='/cadastrologin'>
+<button className="contact-button">Fale Conosco</button>
+</a>
         </nav>
 
         <div className="hamburger" onClick={toggleMenu}>
