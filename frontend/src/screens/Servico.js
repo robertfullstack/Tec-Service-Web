@@ -1,8 +1,28 @@
-import React, {useState} from "react";
+import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { auth } from './firebase'; // Importando auth do firebase
 import '../styles/Servico.scss';
 
 function Servico() {
     const [selected, setSelected] = useState(null);
+    const [isLoggedIn, setIsLoggedIn] = useState(false);
+    const [user, setUser] = useState(null); // Estado para guardar o usuário logado
+    const navigate = useNavigate();
+
+    useEffect(() => {
+        const unsubscribe = auth.onAuthStateChanged((user) => {
+            if (user) {
+                // Se o usuário estiver logado, pegue o e-mail e guarde no estado
+                setUser(user);
+                setIsLoggedIn(true);
+            } else {
+                setUser(null);
+                setIsLoggedIn(false);
+            }
+        });
+
+        return () => unsubscribe();
+    }, []);
 
     const toggle = (i) => {
         if (selected === i) {
@@ -11,10 +31,29 @@ function Servico() {
         setSelected(i);
     };
 
+    const handleServiceRequest = () => {
+        if (!isLoggedIn) {
+            navigate('/cadastrologin');
+        } else {
+            // Lógica para solicitar o serviço se estiver logado
+        }
+    };
+
+    const handleSolicitarServico = () => {
+        if (user) {
+            // Se o usuário estiver logado, execute a ação desejada
+            console.log("Serviço solicitado!");
+            navigate('/abrirChamado');
+        } else {
+            // Se o usuário não estiver logado, redirecione para a página de login
+            navigate('/cadastrologin');
+        }
+    };
+
     const data = [
         {
             question: "Porque escolha nossa loja?",
-            answer: "Todo aparelho eletrônico tem um tempo de vida especificado. Baterias, placas, telas, touch, tudo tem um tempo de validade pré-determinado. Além disso, todos os tipos de equipamentos usados para os consertos de determinados celulares precisam de manutenção também. E é por isso que a Novo Smart é referência nos serviços de assistência de celular. Ela promove todos os cuidados com os próprios recursos disponíveis, garantindo o sucesso de manutenções. Para tanto, é importante buscar observar a qualidade de tudo o que uma assistência oferece, para que os resultados sejam sempre efetivos e positivos. Qualidade é o principal valor da Novo Smart!"
+            answer: "Todo aparelho eletrônico tem um tempo de vida especificado..."
         },
         {
             question: "Qual é a especialização da Assistência especializada em Celular?",
@@ -29,26 +68,31 @@ function Servico() {
             answer: "Texto explicando quando é necessário procurar uma assistência especializada."
         }
     ];
+
     return (
         <div className="servico-container">
             <h1 className="servico-title">Nossos Serviços</h1>
+
+            {user && <p>Olá, {user.email}</p>} {/* Exibe o e-mail do usuário logado */}
+
             <div className="servico-list">
                 <div className="servico-item">
                     <h2>Reparo de Computadores</h2>
                     <p>Diagnóstico e reparo para computadores desktop e laptops.</p>
-                    <button className="solicitar-servico-btn">Solicitar Serviço</button>
+                    <button className="solicitar-servico-btn" onClick={handleSolicitarServico}>Solicitar Serviço</button>
                 </div>
                 <div className="servico-item">
                     <h2>Manutenção de Redes</h2>
                     <p>Configuração e manutenção de redes para empresas e residências.</p>
-                    <button className="solicitar-servico-btn">Solicitar Serviço</button>
+                    <button className="solicitar-servico-btn" onClick={handleSolicitarServico}>Solicitar Serviço</button>
                 </div>
                 <div className="servico-item">
                     <h2>Instalação de Softwares</h2>
                     <p>Instalação e configuração de sistemas operacionais e softwares.</p>
-                    <button className="solicitar-servico-btn">Solicitar Serviço</button>
+                    <button className="solicitar-servico-btn" onClick={handleSolicitarServico}>Solicitar Serviço</button>
                 </div>
             </div>
+
             <h1 className="produto-title">Nossos Produtos</h1>
             <div className="produto-list">
                 <div className="produto-item">
@@ -68,8 +112,6 @@ function Servico() {
                 </div>
             </div>
 
-
-
             <div className="servico-content">
                 <div className="servico-image">
                     <img src="https://clickcel.com.br/images/conserto-carcaa.jpg" alt="Conserto de celular" />
@@ -84,27 +126,23 @@ function Servico() {
                 </div>
             </div>
 
-
-
             <div className="faq-section">
-            <h1 className="faq-title">Perguntas Frequentes</h1>
-            <div className="accordion">
-                {data.map((item, i) => (
-                    <div className="item" key={i}>
-                        <div className="title" onClick={() => toggle(i)}>
-                            <h2 style={{color: 'black'}}>{item.question}</h2>
-                            <span className="icon">{selected === i ? '-' : '+'}</span>
+                <h1 className="faq-title">Perguntas Frequentes</h1>
+                <div className="accordion">
+                    {data.map((item, i) => (
+                        <div className="item" key={i}>
+                            <div className="title" onClick={() => toggle(i)}>
+                                <h2 style={{ color: 'black' }}>{item.question}</h2>
+                                <span className="icon">{selected === i ? '-' : '+'}</span>
+                            </div>
+                            <div className={`content ${selected === i ? 'show' : ''}`}>
+                                <p>{item.answer}</p>
+                            </div>
                         </div>
-                        <div className={`content ${selected === i ? 'show' : ''}`}>
-                            <p>{item.answer}</p>
-                        </div>
-                    </div>
-                ))}
+                    ))}
+                </div>
             </div>
         </div>
-        </div>
-
-        
     );
 }
 

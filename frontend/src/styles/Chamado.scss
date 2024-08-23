@@ -1,0 +1,45 @@
+@import "../index.scss";
+
+
+.chamado-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+.chamado-form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 500px;
+    
+.form-group {
+    margin-bottom: 15px;
+}
+
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input, .service-type {
+    width: -webkit-fill-available;
+    padding: 8px;
+    border: solid 1px #c3c3c3;
+}
+
+.submit-button {
+    padding: 10px;
+    background-color: $bg-button;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.submit-button:hover {
+    background-color: $bg-button-hover;
+}

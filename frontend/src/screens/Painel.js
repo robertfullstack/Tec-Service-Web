@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom"; // Import useNavigate
 import { auth, database, createUserWithEmailAndPassword, signInWithEmailAndPassword, ref, set } from './firebase';
 import '../styles/Painel.scss';
 
@@ -9,6 +10,8 @@ const Painel = () => {
   const [name, setName] = useState('');
   const [error, setError] = useState('');
   const [success, setSuccess] = useState('');
+
+  const navigate = useNavigate(); // Initialize useNavigate
 
   const handleToggleForm = () => {
     setIsLogin(!isLogin);
@@ -22,6 +25,8 @@ const Painel = () => {
       await signInWithEmailAndPassword(auth, email, password);
       setSuccess("Login bem-sucedido!");
       setError('');
+
+      navigate('/servico'); // Redirect to /home after successful login
     } catch (error) {
       setError(error.message);
       setSuccess('');

@@ -4,18 +4,26 @@ import Home from './screens/Home';
 import Painel from './screens/Painel';
 import Header from './components/Header';
 import Servico from './screens/Servico';
+import Chamado from './screens/Chamado';
+import HistoricoChamados from './screens/HistoricoChamados';
+import About from './screens/About';
+import Contato from './screens/Contato';
 
 function App() {
   return (
-<>
-<Header/>
-<Router>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/cadastrologin" element={<Painel />} />
-        <Route path="/Servico" element={<Servico />} />
-      </Routes>
-    </Router></>
+    <>
+      <Header />
+      <Router>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/cadastrologin" element={<Painel />} />
+          <Route path="/Servico" element={<Servico />} />
+          <Route path="/abrirChamado" element={<Chamado />} />
+          <Route path="/HistoricoChamados" element={<HistoricoChamados />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Contato />} />
+        </Routes>
+      </Router></>
   );
 }
 

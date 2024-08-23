@@ -1,6 +1,7 @@
 import React from "react";
 import '../styles/Home.scss';
 import { FaTools, FaMobileAlt, FaSyncAlt, FaShoppingCart, FaEnvelope, FaStar } from 'react-icons/fa';
+import Footer from "../components/Footer";
 
 const Home = () => {
   return (
@@ -9,7 +10,7 @@ const Home = () => {
         <h1>Bem-vindo à TecService</h1>
         <p>Sua solução para consertos e assistência técnica de dispositivos móveis.</p>
       </header>
-      
+
       <section className="services-section">
         <h2>Nossos Serviços</h2>
         <div className="services-list">
@@ -36,12 +37,7 @@ const Home = () => {
         </div>
       </section>
 
-      <section className="about-section">
-        <h2>Sobre Nós</h2>
-        <p>
-          A TecService é especializada em assistência técnica para dispositivos móveis, oferecendo soluções rápidas, eficientes e de alta qualidade. Nossa equipe de especialistas está pronta para resolver qualquer problema que você tenha, desde a troca de telas até a atualização de software. Nosso objetivo é garantir que seus dispositivos estejam sempre funcionando perfeitamente, para que você possa se concentrar no que realmente importa.
-        </p>
-      </section>
+
 
       <section className="testimonials-section">
         <h2>Depoimentos de Clientes</h2>
@@ -76,17 +72,7 @@ const Home = () => {
         </div>
       </section>
 
-      <section className="contact-section">
-        <h2>Fale Conosco</h2>
-        <p>Entre em contato conosco para mais informações ou para agendar um serviço.</p>
-        <button className="contact-button">
-          <FaEnvelope className="button-icon" /> Contato
-        </button>
-      </section>
-
-      <footer className="footer">
-        <p>&copy; 2024 TecService. Todos os direitos reservados.</p>
-      </footer>
+      <Footer />
     </div>
   );
 };
