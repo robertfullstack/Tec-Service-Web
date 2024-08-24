@@ -37,7 +37,7 @@ export const Chamado = () => {
 
     return (
         <div className="chamado-container">
-            <h1>Formulário de Pedido</h1>
+            <h1>Faça o seu chamado</h1>
             <form onSubmit={handleSubmit} className="chamado-form">
                 <div className="form-group">
                     <label htmlFor="name">Nome:</label>

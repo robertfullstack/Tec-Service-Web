@@ -1,10 +1,14 @@
 footer {
-    padding: 20px;
-    background-color: #13131F;
-    color: #fff;
-    text-align: center;
+  height: 10vh;
+  background-color: #13131F;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  text-align: center;
+  width: 100%;
 
-    p {
-      font-size: 1em;
-    }
+  p {
+    font-size: 1em;
   }
+}

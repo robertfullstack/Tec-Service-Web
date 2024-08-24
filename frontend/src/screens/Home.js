@@ -6,10 +6,10 @@ import Footer from "../components/Footer";
 const Home = () => {
   return (
     <div className="home-container">
-      <header className="home-header">
+      <div className="home-header">
         <h1>Bem-vindo à TecService</h1>
         <p>Sua solução para consertos e assistência técnica de dispositivos móveis.</p>
-      </header>
+      </div>
 
       <section className="services-section">
         <h2>Nossos Serviços</h2>
@@ -72,7 +72,6 @@ const Home = () => {
         </div>
       </section>
 
-      <Footer />
     </div>
   );
 };

@@ -50,6 +50,18 @@ function Servico() {
         }
     };
 
+    const handleVerProduto = () => {
+        navigate('/loja');
+
+    };
+
+    const handleContato = () => {
+        navigate('/contact');
+
+    };
+
+    
+
     const data = [
         {
             question: "Porque escolha nossa loja?",
@@ -98,17 +110,17 @@ function Servico() {
                 <div className="produto-item">
                     <h2>Computadores</h2>
                     <p>Computadores desktop e laptops de alta performance.</p>
-                    <button className="ver-produto-btn">Ver Produto</button>
+                    <button className="ver-produto-btn" onClick={handleVerProduto}>Ver Produto</button>
                 </div>
                 <div className="produto-item">
                     <h2>Roteadores</h2>
                     <p>Roteadores de última geração para melhor conectividade.</p>
-                    <button className="ver-produto-btn">Ver Produto</button>
+                    <button className="ver-produto-btn" onClick={handleVerProduto}>Ver Produto</button>
                 </div>
                 <div className="produto-item">
                     <h2>Softwares</h2>
                     <p>Softwares originais e licenciados para diversas necessidades.</p>
-                    <button className="ver-produto-btn">Ver Produto</button>
+                    <button className="ver-produto-btn" onClick={handleVerProduto}>Ver Produto</button>
                 </div>
             </div>
 
@@ -122,7 +134,7 @@ function Servico() {
                     <p>Temos uma estrutura completa para quem busca consertos de celulares em todo Brasil.</p>
                     <p>Arrume seu celular, tablet e smartwatch no mesmo dia! Tenha total garantia de serviço e <span className="highlight">privacidade</span>.</p>
                     <p>Sabia que qualidade e segurança são fatores importantes para nós? Sim, independentemente do modelo de seu smartphone.</p>
-                    <button className="contact-btn">Fale Conosco agora!</button>
+                    <button className="contact-btn" onClick={handleContato}>Fale Conosco agora!</button>
                 </div>
             </div>
 

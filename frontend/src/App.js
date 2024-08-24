@@ -8,6 +8,8 @@ import Chamado from './screens/Chamado';
 import HistoricoChamados from './screens/HistoricoChamados';
 import About from './screens/About';
 import Contato from './screens/Contato';
+import Loja from './screens/Loja';
+import Footer from './components/Footer';
 
 function App() {
   return (
@@ -22,8 +24,11 @@ function App() {
           <Route path="/HistoricoChamados" element={<HistoricoChamados />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contato />} />
+          <Route path="/loja" element={<Loja />} />
         </Routes>
-      </Router></>
+      </Router>
+      <Footer />
+      </>
   );
 }
 
