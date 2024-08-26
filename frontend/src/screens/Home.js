@@ -6,9 +6,18 @@ import Footer from "../components/Footer";
 const Home = () => {
   return (
     <div className="home-container">
-      <div className="home-header">
-        <h1>Bem-vindo à TecService</h1>
-        <p>Sua solução para consertos e assistência técnica de dispositivos móveis.</p>
+      <div className="home-welcome">
+        <div className="home-welcome-left-text">
+          <h2>Bem-vindo à</h2>
+          <h1>TecService</h1>
+          {/* <span>Sua solução para consertos e assistência técnica de dispositivos móveis.</span> */}
+          <span>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Distinctio ut excepturi odit officiis! Officiis quos obcaecati sapiente, beatae minima alias, delectus non a nulla consequuntur, voluptas aspernatur facilis aperiam magni labore assumenda.</span>
+          <a href="">Saiba mais</a>
+        </div>
+        <div className="home-welcome-right-image">
+          {/* <img src="https://img.freepik.com/free-vector/wavy-background-with-copy-space_52683-65230.jpg?t=st=1724707794~exp=1724711394~hmac=4b02b27bd9016a7e666aad9bd2b2730f9560f35a099e44e4b2b2356af77358b5&w=900" alt="" className="bg-image-home"/> */}
+          <img src="/product-teardown-concept-illustration (1).png" alt="Smartphone" />
+        </div>
       </div>
 
       <section className="services-section">
